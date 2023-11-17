@@ -6,21 +6,17 @@ import { AppComponent } from './app.component';
 import { PipingAssignmentComponent } from './piping-assignment/piping-assignment.component';
 import { ReactiveFormsAssignmentComponent } from './reactive-forms-assignment/reactive-forms-assignment.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     AppComponent,
     PipingAssignmentComponent,
-    ReactiveFormsAssignmentComponent
+    ReactiveFormsAssignmentComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    BsDropdownModule.forRoot()
-  ],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

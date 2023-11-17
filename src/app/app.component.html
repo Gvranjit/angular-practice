@@ -1,11 +1,24 @@
-{{ title }}
-
+<h3>
+  {{ title }}
+</h3>
 <div>
-  <p *ngFor="let route of routes; index as i">
-    <a [routerLink]="route.path" [title]="route.path">
-      {{ route.title }}
-    </a>
-  </p>
+  <h4
+    href
+    id="basic-link"
+    (click)="(false)"
+    dropdownToggle
+    aria-controls="basic-link-dropdown"
+  >
+    Choose Practice Topic
+  </h4>
+
+  <ul ngbNav class="nav-pills" orientation="vertical">
+    <li *ngFor="let route of routes; index as i">
+      <a class="dropdown-item" [routerLink]="route.path" [title]="route.path">
+        {{ route.title }}
+      </a>
+    </li>
+  </ul>
 </div>
 
 <router-outlet></router-outlet>
